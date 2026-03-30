@@ -56,6 +56,13 @@
 				body {
 					padding-top: 55px !important;
 				}
+
+				/* FIX: Forces the images/video to be shorter and more square on phones */
+				.balanced-gallery img, 
+				.balanced-gallery iframe, 
+				.balanced-gallery span.image.fit {
+					height: 200px !important; 
+				}
 			}
 
 			/* ========================================= */
@@ -78,22 +85,15 @@
 			}
 		</style>
 	</head>
-				}
-			}
-		</style>
-	</head>
 	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
+				<header id="header">
 						<a href="index.html" class="logo">Personal projects and hobbies</a>
 					</header>
 
-				<!-- Nav -->
-					<nav id="nav">
+				<nav id="nav">
 						<ul class="links">
 							<li><a href="index.html">Projects</a></li>
 							<li><a href="generic.html">Work experince and academic career</a></li>
@@ -107,24 +107,15 @@
 						</ul>
 					</nav>
 
-				<!-- Main -->
-					<div id="custom-mobile-menu">
-							<a href="index.html" class="active">Projects</a>
-							<a href="generic.html">Career</a>
-							<a href="elements.html">Hobbies</a>
-						</div>
-	
-					<div id="custom-mobile-menu">
-							<a href="index.html" class="active">Projects</a>
-							<a href="generic.html">Career</a>
-							<a href="elements.html">Hobbies</a>
-						</div>
+				<div id="custom-mobile-menu">
+						<a href="index.html" class="active">Projects</a>
+						<a href="generic.html">Career</a>
+						<a href="elements.html">Hobbies</a>
+					</div>
 	
 					<div id="main">
 
-						<!-- Post -->
-						<!-- Post -->
-							<section class="post">
+						<section class="post">
 								<header class="major">
 									<span class="date"></span>
 									<h1>Personal projects</h1>
