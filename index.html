@@ -14,62 +14,84 @@
 		
 		<style>
 			@media screen and (max-width: 736px) {
-				/* 1. Hide the hamburger menu */
-				#navPanelToggle {
+				/* 1. Kill the template's hidden side panel and hamburger button */
+				#navPanelToggle, #navPanel {
 					display: none !important;
 				}
 		
-				/* 2. Force the nav bar to show with a solid white background */
+				/* 2. Force the nav bar to be STICKY at the top of the screen */
 				#nav {
 					display: block !important;
+					position: fixed !important;
+					top: 0 !important;
+					left: 0 !important;
+					width: 100% !important;
+					height: 55px !important; /* Force a strict height */
 					background-color: #ffffff !important; 
-					border-top: 1px solid #eeeeee !important;
-					border-bottom: 1px solid #eeeeee !important;
+					z-index: 10000 !important; /* Forces it to stay on top of all images/videos */
+					box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important; /* Nice drop shadow */
 					padding: 0 !important;
 					margin: 0 !important;
+					transform: none !important; /* Stops JS from moving it */
+					opacity: 1 !important;
+					visibility: visible !important;
 				}
 		
-				/* 3. Arrange the list horizontally */
+				/* 3. Arrange the list horizontally to fill the 55px height */
 				#nav > .links {
 					display: flex !important;
 					flex-direction: row !important;
 					width: 100% !important;
+					height: 100% !important;
 					margin: 0 !important;
 					padding: 0 !important;
 				}
 		
-				/* 4. Make the buttons fill the space evenly with separator lines */
+				/* 4. Make the buttons fill the space evenly */
 				#nav > .links > li {
-					flex: 1 1 33% !important;
-					text-align: center !important;
+					flex: 1 !important;
+					display: flex !important;
+					align-items: center !important;
+					justify-content: center !important;
+					border-left: 1px solid #e0e0e0 !important; 
 					padding: 0 !important;
 					margin: 0 !important;
-					border-left: 1px solid #eeeeee !important; 
 				}
 				#nav > .links > li:first-child {
-					border-left: none !important; /* Removes line from the far left */
+					border-left: none !important;
 				}
 		
-				/* 5. Force the text to be VISIBLE, dark, and sized correctly */
+				/* 5. Force the text to be VISIBLE and perfectly centered */
 				#nav > .links > li > a {
 					display: block !important;
-					padding: 15px 2px !important;
+					width: 100% !important;
+					text-align: center !important;
 					font-size: 0.65rem !important;
 					font-weight: 800 !important;
-					color: #212931 !important; /* Forces text to be dark grey */
+					color: #111111 !important; /* Pure black text */
 					text-transform: uppercase !important;
 					letter-spacing: 1px !important;
-					white-space: nowrap !important; /* Stops text from breaking onto two lines */
+					text-decoration: none !important;
+					line-height: 55px !important; /* Centers text vertically */
+					white-space: nowrap !important;
+					padding: 0 !important;
+					margin: 0 !important;
 				}
 		
 				/* 6. Highlight the page you are currently on */
 				#nav > .links > li.active > a {
-					background-color: #f5f5f5 !important; /* Slight grey background */
+					background-color: #f1f1f1 !important; 
+					color: #000000 !important;
 				}
 		
 				/* 7. Hide the social icons to save space */
 				#nav > .icons {
 					display: none !important;
+				}
+		
+				/* 8. Push the rest of the website down slightly so the top isn't hidden under our new sticky menu */
+				body {
+					padding-top: 55px !important;
 				}
 			}
 		</style>
