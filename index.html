@@ -14,15 +14,46 @@
 		
 		<style>
 			@media screen and (max-width: 736px) {
+				/* 1. Hide the hamburger menu button completely */
 				#navPanelToggle {
-					font-size: 1.2rem !important;
-					font-weight: 800 !important;
-					padding: 15px 20px !important;
-					letter-spacing: 2px !important;
+					display: none !important;
 				}
-				#navPanelToggle:before {
-					font-size: 1.5rem !important;
-					margin-right: 8px !important;
+				
+				/* 2. Force the main navigation bar to appear */
+				#nav {
+					display: block !important;
+					padding: 0 !important;
+				}
+				
+				/* 3. Arrange the links in a neat, full-width row */
+				#nav > .links {
+					display: flex !important;
+					flex-direction: row !important;
+					justify-content: space-between !important;
+					width: 100% !important;
+					margin: 0 !important;
+					padding: 0 !important;
+				}
+				
+				/* 4. Style each button to fill the space evenly */
+				#nav > .links > li {
+					flex: 1 1 auto !important;
+					display: block !important;
+					text-align: center !important;
+					border-left: none !important; /* Removes default template lines */
+				}
+				
+				/* 5. Adjust the text size and padding so all 3 fit on a phone screen */
+				#nav > .links > li > a {
+					display: block !important;
+					padding: 15px 2px !important;
+					font-size: 0.75rem !important;
+					letter-spacing: 1px !important;
+				}
+
+				/* 6. Hide the social media icons in the top bar on mobile to save space */
+				#nav > .icons {
+					display: none !important;
 				}
 			}
 		</style>
