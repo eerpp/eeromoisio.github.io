@@ -13,83 +13,53 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
 		<style>
+			/* Hide our custom menu on desktop */
+			#custom-mobile-menu {
+				display: none;
+			}
+
 			@media screen and (max-width: 736px) {
-				/* 1. Kill the template's hidden side panel and hamburger button */
-				#navPanelToggle, #navPanel {
-					display: none !important;
-				}
-		
-				/* 2. Force the nav bar to be STICKY at the top of the screen */
-				#nav {
-					display: block !important;
+				/* 1. Show our custom menu on mobile and lock it to the top */
+				#custom-mobile-menu {
+					display: flex !important;
 					position: fixed !important;
 					top: 0 !important;
 					left: 0 !important;
 					width: 100% !important;
-					height: 55px !important; /* Force a strict height */
-					background-color: #ffffff !important; 
-					z-index: 10000 !important; /* Forces it to stay on top of all images/videos */
-					box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important; /* Nice drop shadow */
-					padding: 0 !important;
-					margin: 0 !important;
-					transform: none !important; /* Stops JS from moving it */
-					opacity: 1 !important;
-					visibility: visible !important;
+					height: 55px !important;
+					background-color: #ffffff !important;
+					z-index: 10000 !important;
+					box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
 				}
-		
-				/* 3. Arrange the list horizontally to fill the 55px height */
-				#nav > .links {
-					display: flex !important;
-					flex-direction: row !important;
-					width: 100% !important;
-					height: 100% !important;
-					margin: 0 !important;
-					padding: 0 !important;
-				}
-		
-				/* 4. Make the buttons fill the space evenly */
-				#nav > .links > li {
+
+				/* 2. Style the links inside our custom menu */
+				#custom-mobile-menu a {
 					flex: 1 !important;
 					display: flex !important;
 					align-items: center !important;
 					justify-content: center !important;
-					border-left: 1px solid #e0e0e0 !important; 
-					padding: 0 !important;
-					margin: 0 !important;
-				}
-				#nav > .links > li:first-child {
-					border-left: none !important;
-				}
-		
-				/* 5. Force the text to be VISIBLE and perfectly centered */
-				#nav > .links > li > a {
-					display: block !important;
-					width: 100% !important;
-					text-align: center !important;
+					text-decoration: none !important;
+					color: #111111 !important;
 					font-size: 0.65rem !important;
 					font-weight: 800 !important;
-					color: #111111 !important; /* Pure black text */
 					text-transform: uppercase !important;
+					border-left: 1px solid #e0e0e0 !important;
 					letter-spacing: 1px !important;
-					text-decoration: none !important;
-					line-height: 55px !important; /* Centers text vertically */
-					white-space: nowrap !important;
-					padding: 0 !important;
-					margin: 0 !important;
+					text-align: center !important;
 				}
-		
-				/* 6. Highlight the page you are currently on */
-				#nav > .links > li.active > a {
-					background-color: #f1f1f1 !important; 
-					color: #000000 !important;
+				#custom-mobile-menu a:first-child {
+					border-left: none !important;
 				}
-		
-				/* 7. Hide the social icons to save space */
-				#nav > .icons {
+				#custom-mobile-menu a.active {
+					background-color: #f1f1f1 !important;
+				}
+
+				/* 3. Completely hide all of the template's original mobile menu elements */
+				#nav, #navPanel, #navPanelToggle, #titleBar {
 					display: none !important;
 				}
-		
-				/* 8. Push the rest of the website down slightly so the top isn't hidden under our new sticky menu */
+
+				/* 4. Push the page down so nothing gets covered up */
 				body {
 					padding-top: 55px !important;
 				}
@@ -132,6 +102,12 @@
 					</nav>
 
 				<!-- Main -->
+					<div id="custom-mobile-menu">
+							<a href="index.html" class="active">Projects</a>
+							<a href="generic.html">Career</a>
+							<a href="elements.html">Hobbies</a>
+						</div>
+	
 					<div id="main">
 
 						<!-- Featured Post -->
