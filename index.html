@@ -13,13 +13,14 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
 		<style>
-			/* Hide our custom menu on desktop */
+			/* ========================================= */
+			/* 1. CUSTOM MOBILE MENU CSS                 */
+			/* ========================================= */
 			#custom-mobile-menu {
 				display: none;
 			}
 
 			@media screen and (max-width: 736px) {
-				/* 1. Show our custom menu on mobile and lock it to the top */
 				#custom-mobile-menu {
 					display: flex !important;
 					position: fixed !important;
@@ -32,7 +33,6 @@
 					box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
 				}
 
-				/* 2. Style the links inside our custom menu */
 				#custom-mobile-menu a {
 					flex: 1 !important;
 					display: flex !important;
@@ -54,14 +54,61 @@
 					background-color: #f1f1f1 !important;
 				}
 
-				/* 3. Completely hide all of the template's original mobile menu elements */
 				#nav, #navPanel, #navPanelToggle, #titleBar {
 					display: none !important;
 				}
 
-				/* 4. Push the page down so nothing gets covered up */
 				body {
 					padding-top: 55px !important;
+				}
+			}
+
+			/* ========================================= */
+			/* 2. BALANCED GALLERY CSS (Photos & Videos) */
+			/* ========================================= */
+			
+			/* Default Desktop Settings */
+			.balanced-gallery img, .balanced-gallery iframe {
+				height: 350px !important; 
+				width: 100% !important;
+				object-fit: cover !important; 
+				object-position: center !important; 
+				border-radius: 8px;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+				border: none !important; 
+				transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+			}
+			
+			.balanced-gallery img:hover, .balanced-gallery iframe:hover {
+				transform: scale(1.02); 
+				box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+			}
+
+			/* Special formatting just for vertical YouTube Shorts on desktop */
+			.balanced-gallery iframe.yt-short {
+				width: auto !important; /* Stops it from stretching wide */
+				aspect-ratio: 9 / 16 !important; /* Forces the vertical shape */
+				margin: 0 auto !important; /* Centers the video in the column */
+				display: block !important;
+				background-color: #000000 !important;
+			}
+
+			/* Mobile-Specific Settings */
+			@media screen and (max-width: 736px) {
+				/* We include .yt-short here so it knows to stretch full width on phones */
+				.balanced-gallery img, .balanced-gallery iframe, .balanced-gallery iframe.yt-short {
+					height: auto !important; 
+					aspect-ratio: 9 / 16 !important; 
+					width: 100% !important; /* Forces everything to fill the screen width */
+					margin-bottom: 15px !important;
+					display: block !important;
+					background-color: #000000 !important;
+				}
+				
+				.balanced-gallery {
+					display: flex !important;
+					flex-wrap: wrap !important;
+					margin-bottom: 20px !important;
 				}
 			}
 		</style>
@@ -120,6 +167,62 @@
 									<h3><a href="javascript:void(0);">Hydraulic Press Build</a></h3>
 									
 								</header>
+
+								<header class="major">
+									<span class="date"></span>
+									<h3><a href="javascript:void(0);">Bosch Future Mobility Challenge (BFMC)</a></h3>
+									
+								</header>
+								
+								<p>The goal of the BFMC competition is to build an autonomous RC car that is able to navigate the track built by Bosch. The Aalto 2026 team has so far qualified to finals, which will be held in Romania in the middle of May. Out team's car is currently able to lanekeep, recognize traffic signs and pedestrians using Yolo model, localize itself with a combination of GPS, IMU and wheel encoder data, perform parking manuvers and much more. We hope to challenge the top teams this year at the finals!</p>
+									<style>
+								    /* This special CSS will only affect our "balanced-gallery" row */
+								    .balanced-gallery img {
+								        /* Force every image in this row to have the exact same professional height */
+								        height: 350px !important; 
+								        
+								        /* The secret weapon: force the image to fill the box neatly, cropping it without stretching. */
+								        object-fit: cover !important; 
+								        
+								        /* Make sure the focus stays centered on the key parts of your images */
+								        object-position: center !important; 
+								        
+								        /* Add a very subtle rounding for a premium finish */
+								        border-radius: 8px;
+								        box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+								        
+								        /* Smooth hover animation */
+								        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+								    }
+								    
+								    .balanced-gallery img:hover {
+								        transform: scale(1.02); /* Slight scale up on hover */
+								        box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* deeper shadow on hover */
+								    }
+								</style>
+								
+								<h5>Research assistant career</h5>
+								<div class="box alt">
+								    <div class="row gtr-50 gtr-uniform balanced-gallery">
+								        
+								        <div class="col-6">
+								            <span class="image fit"><img src="images/bfmc_car_body_on.jpeg" alt="LEM Towers Front View" /></span>
+								        </div>
+								        
+								        <div class="col-6">
+								            <span class="image fit"><img src="images/bfmc_setting.jpeg" alt="Return Pump Logic PCB" /></span>
+								        </div>
+
+										<div class="col-6">
+								            <span class="image fit"><img src="images/bfmc_car_no_body.jpg" alt="Okerman Excavator on Site" /></span>
+								        </div>
+										
+								        <div class="col-6">
+											<iframe class="yt-short" src="https://www.youtube.com/embed/CyIY3IMX1ho?autoplay=1&mute=1&loop=1&playlist=CyIY3IMX1ho" allow="autoplay; fullscreen" allowfullscreen></iframe>
+										</div>
+								        
+								    </div>
+								</div>
 
 								<p>Hydraulic horseshoe bending machine designed to allow horseman to shape horseshoes without the use of hammer or heating the metal. I was part of designing and choosing hydraulic components, making the CAD model, as well as the physical building of the machine, mainly manufacturing the fram out of square profile pipe and welding the whole contraption together. The project was succesful and was able to shape horseshoes with ease. The project was taken into use by an actual horseman, adding to his mobile arsenal of horseshoe shaping tool arsenal.</p>
 								
