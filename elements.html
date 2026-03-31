@@ -68,6 +68,8 @@
 			/* ========================================= */
 			/* 2. BALANCED GALLERY CSS (Photos & Videos) */
 			/* ========================================= */
+			
+			/* Default Desktop Settings */
 			.balanced-gallery img, .balanced-gallery iframe {
 				height: 350px !important; 
 				width: 100% !important;
@@ -82,6 +84,21 @@
 			.balanced-gallery img:hover, .balanced-gallery iframe:hover {
 				transform: scale(1.02); 
 				box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+			}
+
+			/* Mobile-Specific Settings */
+			@media screen and (max-width: 736px) {
+				.balanced-gallery img, .balanced-gallery iframe {
+					height: 160px !important; /* Shrinks height to make them neat squares on phones */
+					margin-bottom: 15px !important; /* Pushes the text down so it cannot overlap */
+				}
+				
+				/* Optional: Forces the grid to behave if the template tries to break it */
+				.balanced-gallery {
+					display: flex !important;
+					flex-wrap: wrap !important;
+					margin-bottom: 20px !important;
+				}
 			}
 		</style>
 	</head>
